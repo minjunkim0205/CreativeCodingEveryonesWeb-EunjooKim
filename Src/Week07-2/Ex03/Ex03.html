@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var fruits = prompt("먹고 싶은 과일을 입력하세요");
+    switch (fruits) {
+        case "바나나":
+            price = 200;
+            break;
+        case "사과":
+            price = 300;
+            break;
+        case "체리":
+            price = 400;
+            break;
+        default:
+            price = 0;
+    }
+    if(fruits == null || price == 0){
+        document.write("팔지 않습니다.");
+    } else {
+        document.write(fruits+"는"+price+"원 입니다.");
+    }
+    // switch 문의 실행 결과 price=300
+</script>
+</body>
+</html>

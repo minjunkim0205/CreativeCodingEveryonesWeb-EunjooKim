@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>요일별 영업 정보 출력하기</title>
+</head>
+<body>
+<script>
+    var day = prompt("요일을 입력해 주세요", "월");
+    var mess;
+    switch (day) {
+        case "월":
+        case "화":
+        case "수":
+        case "목":
+        case "금":
+            //document.write("정상영업");
+            mess = "정상영업";
+            break;
+        case "토":
+        case "일":
+            //document.write("휴일");
+            mess = "휴일"
+            break;
+    }
+    //document.write(" 입니다.<br>");
+    document.write(mess+" 입니다.<br>");
+</script>
+</body>
+</html>
