@@ -9,10 +9,11 @@
 <hr>
 <script>
     var data = prompt("학번과 이름, 나이를 입력하세요 : ").split(" ");
+    var type = ["학번", "이름", "나이"];
     document.write("[출력결과]<br>");
-    document.write("학번 : "+data[0]+"<br>");
-    document.write("이름 : "+data[1]+"<br>");
-    document.write("나이 : "+data[2]+"<br>");
+    for(var i = 0; i < 3; i++){
+        document.write(type[i]+" : "+data[i]+"<br>");
+    }
 </script>
 </body>
 </html>
