@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>키보드로 두 개의 점수를 입력 받아 합과 평균을 출력하세요.(객체적 프로그래밍)</title>
+    <script>
+        function eSum(x, y){
+            return (x+y);
+        }
+        function eAvg(x, y){
+            return (eSum(x,y)/2);
+        }
+        function Student(x, y){
+            this.x = x;
+            this.y = y;
+
+            this.getSum = eSum(this.x, this.y);
+            this.getAvg = eAvg(this.x, this.y);
+        }
+    </script>
+</head>
+<body>
+<h3>키보드로 두 개의 점수를 입력 받아 합과 평균을 출력하세요.</h3>
+<hr>
+<script>
+    let x = parseInt(prompt("x의 값을 입력하세요 : "));
+    let y = parseInt(prompt("y의 값을 입력하세요 : "));
+
+    let student = new Student(x, y);
+
+    let sum = student.getSum;
+    let avg = student.getAvg;
+
+    document.write("x의 값은 ["+x+"] 입니다<br>");
+    document.write("y의 값은 ["+y+"] 입니다<br>");
+    document.write("합은 ["+sum+"] 입니다<br>");
+    document.write("평균은 ["+avg+"] 입니다<br>");
+</script>
+</body>
+</html>

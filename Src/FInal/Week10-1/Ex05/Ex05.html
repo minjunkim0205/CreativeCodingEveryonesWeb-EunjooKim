@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>학생 학점 출력 프로그램을 객체 생성으로 구현하기.</title>
+    <script>
+        function eSum(x, y){
+            return (x+y);
+        }
+        function eAvg(x, y){
+            return (eSum(x,y)/2);
+        }
+        function eGrade(score){
+            let hak;
+            if(score>=90){
+                hak = "A";
+            }else if(score>=80){
+                hak = "B";
+            }else if(score>=70){
+                hak = "C";
+            }else if(score>=60){
+                hak = "D";
+            }else{
+                hak = "F";
+            }
+            return (hak);
+        }
+        function Student(name, x, y){
+            this.name = name;
+            this.x = x;
+            this.y = y;
+            this.getSum = eSum(this.x, this.y);
+            this.getAvg = eAvg(this.x, this.y);
+            this.getGrade = eGrade(this.getAvg);
+        }
+    </script>
+</head>
+<body>
+<h3>학생 학점 출력 프로그램을 객체 생성으로 구현하기.</h3>
+<hr>
+<script>
+    let x = parseInt(prompt("x의 값을 입력하세요 : "));
+    let y = parseInt(prompt("y의 값을 입력하세요 : "));
+
+    let student = new Student("김민준", x, y);
+
+    let sum = student.getSum;
+    let avg = student.getAvg;
+    let grade = student.getGrade;
+
+    document.write(student.name+"의 성적은<br>");
+    document.write("합 : "+sum+"<br>");
+    document.write("평균 : "+avg+"<br>");
+    document.write("학점 : "+grade+"<br>");
+</script>
+</body>
+</html>
