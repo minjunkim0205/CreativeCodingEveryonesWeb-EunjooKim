@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>배열 메게값 함수</title>
+    <script>
+        function dout(str){
+            document.write(str);
+        }
+        function ePrint(array){
+            for(let i = 0; i < array.length; i+=3){
+                let score_sum = array[i+1] + +array[i+2];
+                let score_avg = score_sum/2;
+                dout(array[i]+" : "+array[i+1]+", "+array[i+2]+" 의 결과물<br>");
+                dout("총점은 "+score_sum+"<br>");
+                dout("평균은 "+score_avg+"<br>");
+                dout("학점은 ");
+                if(score_avg >= 90){
+                    dout("A<br>");
+                }else if(score_avg >= 80){
+                    dout("B<br>");
+                }else if(score_avg >= 70){
+                    dout("C<br>");
+                }else if(score_avg >= 60){
+                    dout("D<br>");
+                }else{
+                    dout("F<br>");
+                }
+                dout("-------------------------------------<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let array = ["홍길동",20,30,"박길자",23,50,"최순달",32,100];
+        ePrint(array);
+    </script>
+</body>
+</html>

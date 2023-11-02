@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>배열 메게값 함수(프로토타입)</title>
+    <script>
+        function Student(name, score_1, score_2){
+            this.univ = "한림대학교";
+            this.name = name;
+            this.score_sum = score_1 + score_2;
+            this.score_avg = this.score_sum/2;
+
+            this.getGrade = function(){
+                let hak = "";
+                if(this.score_avg >= 90){
+                    hak = "A";
+                }else if(this.score_avg >= 80){
+                    hak = "B";
+                }else if(this.score_avg >= 70){
+                    hak = "C";
+                }else if(this.score_avg >= 60){
+                    hak = "D";
+                }else{
+                    hak = "F";
+                }
+                return (hak);
+            }
+
+            document.write("sum="+this.score_sum+", avg="+this.score_avg+"<br>");
+            document.write("hak = "+this.getGrade()+"<br>");
+        }
+    </script>
+</head>
+<body>
+<script>
+    let name = prompt("이름을 입력하세요");
+    let score_1 = parseInt(prompt("숫자1을 입력하세요"));
+    let score_2 = parseInt(prompt("숫자2을 입력하세요"));
+
+    let student = new Student(name, score_1, score_2);
+    document.write(student.univ + " 재학생인 " + student.name + "의 학점은 " + student.getGrade() + "입니다.<br>");
+</script>
+</body>
+</html>
