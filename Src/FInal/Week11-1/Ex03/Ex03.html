@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>배열에 입력된 데이터를 함수의 매개변수로 입력 받아 전체 데이터의 합과 평균을 출력하세요.</title>
+    <script>
+        function dout(message, suffix){
+            document.write(message + suffix);
+        }
+        function Ex(){
+            /*Field*/
+            this.ans_sum = 0;
+            this.ans_avg = 0;
+            /*Method*/
+            this.arrInput = function(){
+                const SIZE = 3;
+                let array = new Array(SIZE);
+                for(let i = 0; i < array.length; i++){
+                    array[i] = parseInt(prompt("arr["+i+"] 에 저장할 숫자를 입력하세요."))
+                }
+                return (array);
+            }
+            this.arrCalc = function(array){
+                this.ans_sum = 0;
+                this.ans_avg = 0;
+                for(let i = 0; i < array.length; i++){
+                    this.ans_sum += array[i];
+                }
+                this.ans_avg = this.ans_sum/array.length;
+            }
+            this.arrPrint = function(array){
+                dout("배열에 저장된 데이터 : ", "")
+                for(let i = 0; i < array.length; i++){
+                    dout(array[i], ( (i==(array.length-1)) ? "<br>" : ", " ));
+                }
+                dout("전체 합 : "+this.ans_sum, "<br>");
+                dout("평균 : "+this.ans_avg, "<br>")
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var k = new Ex();
+        var sou = k.arrInput();
+        k.arrCalc(sou);
+        k.arrPrint(sou);
+    </script>
+</body>
+</html>

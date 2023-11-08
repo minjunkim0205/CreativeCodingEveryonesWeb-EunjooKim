@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>키보드로 점수를 입력 받아 학점을 출력하세요.</title>
+    <script>
+        function dout(message, suffix){
+            document.write(message + suffix)
+        }
+        function Solve(score){
+            /*Field*/
+            this.score = score;
+            /*Method*/
+            this.getScore = function(){
+                return (this.score);
+            }
+            this.getHak = function(){
+                let hak = "";
+                if(this.score >= 90){
+                    hak = "A";
+                }else if(this.score >= 80){
+                    hak = "B";
+                }else if(this.score >= 70){
+                    hak = "C";
+                }else if(this.score >= 60){
+                    hak = "D";
+                }else{
+                    hak = "F";
+                }
+                return hak;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let solve = new Solve(parseInt(prompt("학점을 입력해 주세요.")));
+        dout("입력한 ["+solve.getScore()+"]의 학점은["+solve.getHak()+"]입니다.", "<br>");
+    </script>
+</body>
+</html>

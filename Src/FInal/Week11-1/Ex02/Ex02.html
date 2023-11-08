@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>키보드로 초기값과 최종값, 배수를 입력 받아 해당 배수의 합과 개수를 출력하세요.</title>
+    <script>
+        function dout(message, suffix){
+            document.write(message + suffix)
+        }
+        function Solve(data){
+            /*Field*/
+            this.begin = data[0];
+            this.end = data[1];
+            this.trg = data[2];
+            this.ans_cnt = 0;
+            this.ans_sum = 0;
+            /*Method*/
+            this.cal = function(){
+                this.ans_cnt = 0;
+                this.ans_sum = 0;
+                for(let i = this.begin; i <= this.end; i++){
+                    if((i%this.trg)==0){
+                        this.ans_cnt++;
+                        this.ans_sum+=i;
+                    }
+                }
+            }
+            this.ans = function(){
+                dout("["+this.begin+"]에서 ["+this.end+"]까지 ", "");
+                dout("["+this.trg+"]배수의 합은 ["+this.ans_sum+"], 개수는 ["+this.ans_cnt+"]", "<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+<script>
+    let data_type = ["초기값", "최종값", "배수"];
+    let data = new Array(3);
+    for(let i = 0; i < data_type.length; i++){
+        data[i] = parseInt(prompt(data_type[i]+"을(를) 입력해 주세요."));
+    }
+    let solve = new Solve(data);
+    solve.cal();
+    solve.ans();
+</script>
+</body>
+</html>
