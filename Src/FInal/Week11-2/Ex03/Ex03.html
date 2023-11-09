@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>입력 받은 기호를 입력받은 n번 반복해서 3개씩 나눠 출력 하기.</title>
+    <script>
+        function dout(message, suffix){
+            document.write(message + suffix);
+        }
+    </script>
+</head>
+<body>
+<script>
+    let symbol = prompt("출력할 기호는 무엇입니까?");
+    let size = parseInt(prompt("반복횟수를 입력하세요"));
+
+    dout(((symbol.repeat(3)+"<br>").repeat(size/3))+symbol.repeat(size%3), "");
+    /*
+    for(let i = 1; i <= size; i++){
+        dout(symbol, " ");
+        if(i%3==0){
+            dout("<br>", "");
+        }
+    }
+    */
+</script>
+</body>
+</html>

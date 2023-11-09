@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>입력 받은 기호를 입력받은 n번 반복해서 출력 하기.</title>
+    <script>
+        function dout(message, suffix){
+            document.write(message + suffix);
+        }
+    </script>
+</head>
+<body>
+<script>
+    let symbol = prompt("출력할 기호는 무엇입니까?");
+    let size = parseInt(prompt("반복횟수를 입력하세요"));
+    for(let i = 0; i < size; i++){
+        dout(symbol, " ");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>입력받은 n을 n*n사이즈의 정사각형으로 출력.</title>
+    <script>
+        function dout(message, suffix){
+            document.write(message + suffix);
+        }
+    </script>
+</head>
+<body>
+<script>
+    let size = parseInt(prompt("반복횟수를 입력하세요"));
+
+    dout("■".repeat(size), "<br>");
+    dout(("■"+("□".repeat(size-2))+"■"+"<br>").repeat(size-2), "");
+    dout("■".repeat(size), "<br>");
+    /*
+    for(let r = 0; r < size; r++){
+        for(let c = 0; c < size; c++){
+            if((r==0)||(c==0)||(r==size-1)||(c==size-1)){
+                dout("■", "");
+            } else{
+                dout("□", "");
+            }
+        }
+        dout("<br>", "");
+    }
+    */
+</script>
+</body>
+</html>
