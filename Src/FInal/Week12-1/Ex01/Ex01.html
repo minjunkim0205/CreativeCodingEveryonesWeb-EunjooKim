@@ -2,21 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>원도우 열기</title>
-    <script>
-        function load(url){
-            window.open(url, "myWindow", "left=300, top=300, width=400, height =300");
-        }
-    </script>
+    <title>window.open()으로 html파일 열기</title>
 </head>
 <body>
-    <h3>window.open()으로 원도우 열기</h3>
-    <hr>
-    <a href="javascript:load('https://www.hallym.ac.kr/')">한림대학교 웹 페이지</a>
-    <br>
-    <a href="javascript:load('https://smartlead.hallym.ac.kr/')">스마트 리드 웹 페이지</a>
-    <br>
-    <a href="javascript:load('https://hlsw.hallym.ac.kr/')">SW 중심사업단 웹 페이지</a>
-    <br>
+    <script>
+        window.open("sample.html");
+        window.open("sample.html", "myWindow", "toolbar=yes");
+        window.open("sample.html", "_self");
+        window.open("sample.html", "_blank");
+        window.open("https://google.com", "myWindow", "left=10, top=10, width=300, height=400");
+        window.open("https://google.com");
+        window.open();
+        /*
+        let select = parseInt(prompt("SELECT 0~6", ""));
+        switch(select){
+            case 0:
+                window.open("sample.html");
+                break;
+            case 1:
+                window.open("sample.html", "myWindow", "toolbar=yes");
+                break;
+            case 2:
+                window.open("sample.html", "_self");
+                break;
+            case 3:
+                window.open("sample.html", "_blank");
+                break;
+            case 4:
+                window.open("https://google.com", "myWindow", "left=10, top=10, width=300, height=400");
+                break;
+            case 5:
+                window.open("https://google.com");
+                break;
+            case 6:
+                window.open();
+                break;
+        }
+        */
+    </script>
 </body>
 </html>

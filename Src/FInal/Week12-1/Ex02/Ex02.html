@@ -2,29 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>원도우 닫기</title>
-    <script>
-        let new_window = null;
-        function loadWindow(url){
-            new_window = window.open(url, "myWindow", "left=300, top=300, width=400, height =300");
-        }
-        function closeWindow(){
-            if(new_window==null || new_window.closed()){
-                return;
-            }else{
-                new_window.close();
-            }
-        }
-    </script>
+    <title>button으로 window.open()실행 하기</title>
 </head>
 <body>
-<h3>window.open()으로 원도우 열기</h3>
-<hr>
-<a href="javascript:loadWindow('https://www.hallym.ac.kr/')">한림대학교 웹 페이지</a>
-<br>
-<a href="javascript:window.close()">현재 원도우 닫기</a>
-<br>
-<a href="javascript:closeWindow()">새 원도우 닫기</a>
-<br>
+    <form>
+        <button onclick="window.open('https://google.com', '', 'width=600, height=600')">새 원도우 열기</button>
+    </form> 
 </body>
 </html>

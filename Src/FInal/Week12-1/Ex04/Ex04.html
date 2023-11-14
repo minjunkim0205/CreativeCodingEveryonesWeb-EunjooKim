@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>원도우 닫기</title>
+    <script>
+        let newWindow = null;
+        function loadWindow(url){
+            newWindow = window.open(url, "myWindow", "left=300, top=300, width=400, height=300");
+        }
+        function closeWindow(){
+            if(newWindow==null || newWindow.closed){
+                return;
+            }else{
+                newWindow.close();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>window의 close()로 원도우 닫기</h3>
+    <a href="javascript:loadWindow('https://www.disneyworld.com')">새 원도우 열기(디즈니월드)</a>
+    <br>
+    <a href="javascript:window.close()">현재 원도우 닫기</a>
+    <br>
+    <a href="javascript:closeWindow()">새 원도우 닫기</a>
+    <br>
+</body>
+</html>
