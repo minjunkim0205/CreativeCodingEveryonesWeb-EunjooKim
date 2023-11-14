@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>원도우 닫기</title>
+    <script>
+        let new_window = null;
+        function loadWindow(url){
+            new_window = window.open(url, "myWindow", "left=300, top=300, width=400, height =300");
+        }
+        function closeWindow(){
+            if(new_window==null || new_window.closed()){
+                return;
+            }else{
+                new_window.close();
+            }
+        }
+    </script>
+</head>
+<body>
+<h3>window.open()으로 원도우 열기</h3>
+<hr>
+<a href="javascript:loadWindow('https://www.hallym.ac.kr/')">한림대학교 웹 페이지</a>
+<br>
+<a href="javascript:window.close()">현재 원도우 닫기</a>
+<br>
+<a href="javascript:closeWindow()">새 원도우 닫기</a>
+<br>
+</body>
+</html>
