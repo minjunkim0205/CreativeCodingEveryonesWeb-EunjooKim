@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실습9</title>
+</head>
+<body>
+    <script>
+        let student = {};
+        student.이름 = "홍길동";
+        student.취미 = "악기";
+        student.특기 = "프밍";
+        student.장래희망 = "사업가";
+
+        student.toPrint = function (){
+            let output = "";
+            for(let key in this){
+                if(key != "toPrint"){
+                    output += (key+" : "+this[key]+"\n");
+                }
+            }
+            return output;
+        }
+
+        alert(student.toPrint());
+    </script>
+</body>
+</html>

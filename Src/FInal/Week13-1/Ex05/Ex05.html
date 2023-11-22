@@ -5,6 +5,18 @@
     <title>실습5</title>
 </head>
 <body>
-
+    <script>
+        let product = {
+            name : "Microsoft Visual Studio",
+            price : "100,000원",
+            language : "한국어",
+            supportOS : "Win 32/64"
+        };
+        let output = "";
+        for (let key in product){
+            output += "●"+key+" : "+product[key]+"\n";
+        }
+        alert(output);
+    </script>
 </body>
 </html>

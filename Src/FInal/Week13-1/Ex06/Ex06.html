@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실습6</title>
+</head>
+<body>
+    <script>
+        let output = "";
+        let student = {
+            이름 : "홍길동",
+            국어 : "92",
+            수학 : "98",
+            영어 : "96",
+            과학 : "98"
+        };
+        output += "[student]객체에 이름이 있습니까? "+("이름" in student)+"\n";
+        output += "[student]객체에 성별이 있습니까? "+("성별" in student);
+        alert(output);
+    </script>
+</body>
+</html>
