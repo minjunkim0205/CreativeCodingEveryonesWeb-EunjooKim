@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문제2</title>
+</head>
+<body>
+<script>
+    let score;
+    while(true){
+        let text_input = prompt("국어,수학,영어 점수를 차례대로 입력하세요");
+        score = text_input.split(/[ ,/]+/, 3); // 정규표현식
+        if(score.length == 3){
+            break;
+        }
+        alert("점수는 세개를 입력해야 합니다.\n현재 "+score.length+"개만 입력하셨습니다.\n다시 입력하세요.");
+    }
+    alert(score);
+</script>
+</body>
+</html>

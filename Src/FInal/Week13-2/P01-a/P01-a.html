@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>문제1-a</title>
+    <script>
+        function dout(message, suffix) {
+            document.write(message + suffix);
+        }
+    </script>
+</head>
+<body>
+<script>
+    let symbols = "";
+    let size = 0;
+    while(true){
+        symbols = prompt("출력할 기호는 무엇입니까?"); //■○♥◇
+        if(symbols.length >= 2){
+            break;
+        }
+        alert("이미지는 최소 2개 이상 있어야 합니다.");
+    }
+    while(true){
+        size = parseInt(prompt("반복횟수를 입력하세요")); //4
+        if(size >= 2){
+            break;
+        }
+        alert("반복 횟수는 최소 2개 이상 입력해야 합니다.");
+    }
+    dout(symbols.charAt(0%symbols.length).repeat(size), "<br>");
+    dout((symbols.charAt(1%symbols.length)+("□".repeat(size-2))+symbols.charAt(2%symbols.length)+"<br>").repeat(size-2), "");
+    dout(symbols.charAt(3%symbols.length).repeat(size), "<br>");
+</script>
+</body>
+</html>

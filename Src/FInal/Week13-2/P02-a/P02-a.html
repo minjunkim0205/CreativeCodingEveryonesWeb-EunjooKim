@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문제2-a</title>
+    <script>
+        function hak(score){
+            if(score >= 90){
+                return ('A');
+            }else if(score >= 80){
+                return ('B');
+            }else if(score >= 70){
+                return ('C');
+            }else if(score >= 60){
+                return ('D');
+            }else{
+                return ('F');
+            }
+        }
+        function pass(score){
+            if(score >= 70){
+                return ("합격");
+            }else{
+                return ("불합격");
+            }
+        }
+    </script>
+</head>
+<body>
+<script>
+    let score;
+    while(true){
+        let text_input = prompt("국어,수학,영어 점수를 차례대로 입력하세요");
+        score = text_input.split(/[ ,/]+/, 3); // 정규표현식
+        if(score.length == 3){
+            break;
+        }
+        alert("점수는 세개를 입력해야 합니다.\n현재 "+score.length+"개만 입력하셨습니다.\n다시 입력하세요.");
+    }
+    let output = "";
+    output += ("1)국어 점수 : "+score[0]+"\n");
+    output += ("2)수학 점수 : "+score[1]+"\n");
+    output += ("3)영어 점수 : "+score[2]+"\n");
+    let score_sum = parseInt(score[0])+parseInt(score[1])+parseInt(score[2]);
+    output += ("4)총합 : "+score_sum+"\n");
+    let score_avg = score_sum/3;
+    output += ("5)평균 : "+score_avg+"\n");
+    output += ("6)학점 : "+hak(score_avg)+" 학점\n");
+    output += ("7)통과 여부 : "+pass(score_avg)+"\n");
+    alert(output);
+</script>
+</body>
+</html>
