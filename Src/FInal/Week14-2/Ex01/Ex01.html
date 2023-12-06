@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>마지막 문제 해결</title>
+</head>
+<body>
+    <script>
+        function makeStudent(name, korean, math, english, science) {
+            var willReturn = {
+                이름: name,
+                국어: korean,
+                수학: math,
+                영어: english,
+                과학: science,
+                getSum: function () {
+                    return (this.국어 + this.수학 + this.영어 + this.과학);
+                },
+                getAverage: function () {
+                    return (this.getSum() / 4);
+                },
+                toString: function () {
+                    return (this.이름 + '\t' + this.getSum() + '\t' + this.getAverage());
+                }
+            };
+            return (willReturn);
+        }
+
+        let count = parseInt(prompt("반복횟수를 입력하세요."));
+        while(count < 2){
+            alert("반복횟수는 최소 2개 이상 입력해야 합니다.");
+            count = parseInt(prompt("반복횟수를 입력하세요."));
+        }
+
+        var students = [];
+        for(let i = 0; i < count; i++){
+            let input = prompt("이름,국어,수학,영어,과학 점수를 차례대로 입력하세요.").split(',');
+            while(input.length != 5){
+                alert("입력한 데이터의 개수가 정확하지 않습니다.\n다시 입력하세요.");
+                input = prompt("이름,국어,수학,영어,과학 점수를 차례대로 입력하세요.").split(',');
+            }
+            students.push(makeStudent(input[0], parseInt(input[1]), parseInt(input[2]), parseInt(input[3]), parseInt(input[4])));
+        }
+
+        var output = '이름\t총점\t평균\n';
+        for (var i in students) {
+            output += (students[i].toString() + "\n");
+        }
+        alert(output);
+    </script>
+</body>
+</html>
